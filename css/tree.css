@@ -1,39 +1,33 @@
-﻿/*共通*/
+﻿.side-bar {
+	width: 300px;
+	padding: 10px;
+	overflow: hidden;
+}
 
-.tree-item {
+.node, .leaf {
 	width: 100%;
-	border-bottom: solid 1px white;
+	height: 30px;
+	display: flex;
+	align-items: center;
 	cursor: pointer;
-	font-size: 18px;
-	padding: 10px 5px;
 	color: #2F5597;
-	font-weight: 700;
 }
 
-.tree-item.hide {
-	display: none;
-}
-
-.tree-item:hover{
+.node:hover, .leaf:hover{
+	cursor: pointer;
 	background: gray;
 	color: white;
 }
 
-.tree-item.parent span::before {
-	width: 0;
-	height: 0;
-	border-style: solid;
-	border-width: 5px 0 5px 10px;
-	border-color: transparent transparent transparent #2F5597;
-	display: block;
-	content: "";
-	float: left;
-	position: relative;
-	top: 5px;
-	margin-right: 5px;
+.node > button {
+	border: none;
+	outline: none;
+	cursor: pointer;
+	background: inherit;
+	z-index: 100;
 }
 
-.tree-item.parent.open span::before {
+.node > button::before {
 	width: 0;
 	height: 0;
 	border-style: solid;
@@ -41,15 +35,23 @@
 	border-color: transparent transparent #2F5597 transparent;
 	display: block;
 	content: "";
-	float: left;
-	position: relative;
-	top: 5px;
-	margin-right: 5px;
 }
 
-.tree-item.child.select {
+.node.close > button::before {
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 5px 0 5px 10px;
+	border-color: transparent transparent transparent #2F5597;
+	display: block;
+	content: "";
+}
+
+.leaf.selected {
 	background: gray;
 	color: white;
 }
 
-
+.hide {
+	display: none;
+}

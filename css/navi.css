@@ -1,0 +1,48 @@
+﻿.top {
+	width: 300px;
+	height: 30px;
+	padding: 10px;
+}
+
+.navi {
+	display: flex;
+}
+
+.navi-item {
+	height: 30px;
+	padding-left: 20px;
+	padding-right: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	background: gray;
+	color: #FFFFFF;
+	margin-right: 1px;
+	box-sizing: border-box;
+}
+
+.navi-item::before {
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 15px 0 15px 15px;
+	border-color: transparent transparent transparent #FFFFFF;
+	display: block;
+	content: "";
+	position: absolute;
+	left: 0;
+}
+
+.navi-item::after {
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 15px 0 15px 15px;
+	border-color: transparent transparent transparent gray;
+	display: block;
+	content: "";
+	position: absolute;
+	right: -15px;
+	z-index: 2;
+}
